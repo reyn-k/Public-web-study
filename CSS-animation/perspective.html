@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>CSS-perspective</title>
+
+	<script></script>
+	<style>
+		.menu {
+			display: flex;
+
+			/* 子要素サイズに応じて可変 */
+			width: -webkit-fit-content;
+			width:    -moz-fit-content;
+			width:         fit-content;
+			height: auto;
+
+			transform-style: preserve-3d;
+			/* perspective: 100px; */
+			}
+
+		/* 横並び */
+		.menu.row {
+			flex-flow: row nowrap;
+			border-bottom: .35em solid dodgerblue;
+			}
+
+		.menu.row1 {
+			perspective: 10px;
+			}
+
+		.menu.row2 {
+			perspective: 1000px;
+			}
+
+		/* 縦並び */
+		.menu.column {
+			flex-flow: column nowrap;
+			border-left: .35em solid dodgerblue;
+			}
+
+		.menu.column1 {
+			perspective: 10px;
+			}
+
+		.menu.column2 {
+			perspective: 990px;
+			}
+
+		/* 共通 */
+		.menu .title,
+				.menu a {
+			display: block;
+			padding: .5em 1em;
+
+			color: white;
+			}
+
+		.menu .title {
+			background-color: dodgerblue;
+			}
+
+		.menu a {
+			background-color: rgba(22, 22, 22, 1);
+			transition: .3s;
+			}
+
+		/* 並べ方に依存 */
+		.menu.row a {
+			transform-origin: center bottom;
+			transform: rotateX(90deg);
+			}
+
+		.menu.row a + a {
+			border-left: 1px solid currentColor;
+			}
+
+		.menu.column a {
+			transform-origin: left center;
+			transform: rotateY(90deg);
+			}
+
+		.menu.column a + a {
+			border-top: 1px solid currentColor;
+			}
+
+		/* animation  */
+		.menu:hover a {
+			transform: none;
+			/* コメントアウトするとアニメーションしない */
+			}
+
+		.menu a:hover {
+			background-color: rgba(0, 0, 135, 1);
+			}
+
+	</style>
+</head>
+
+<body>
+	<div class="menu row row1" ontouchstart="">
+		<div class="title">perspective</div>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</div>
+	<div class="menu row row2" ontouchstart="">
+		<div class="title">perspective</div>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</div>
+
+	<hr />
+
+	<div class="menu column column1" ontouchstart="">
+		<div class="title">perspective:10px</div>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</div>
+
+	<div class="menu column column2" ontouchstart="">
+		<div class="title">perspective:990px</div>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</div>
+	perspectiveに関しては、もうこの状態を見た目で覚えるしかないな。<br>
+	手前のxyでできた長方形の大きさが、persepective:10pxと990pxで同じってのは<br>
+	<a href="https://fuuno.net/ani/ani20/ani20.html" target="_blank">ふ。さんの解説</a>だとおかしい気がするし。<br>
+	手前は同じ大きさ、奥の平行の長方形が10px(小)だと遠く小さくなり、990pxだと近く大きい、と覚えておこう。
+</body>
+
+</html>

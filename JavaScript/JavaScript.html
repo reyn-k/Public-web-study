@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>朝活JavaScript演習</title>
+
+  <!--<link rel="stylesheet" href="/styles.css">-->
+
+  <style></style>
+
+  <meta name="description" content="ページの説明文" />
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const a = document.getElementById('link');
+
+      console.log(a.target); // → _blank
+      //const.node =
+      console.log(a.childNodes[0].data);
+      console.log(a.childNodes[0].target);
+
+      a.removeAttribute('target');
+
+      const textNode1 = document.createTextNode('aaa\r\nbbb');
+      // const textNode2 = a.createTextNode('aaa');
+      // const textNode3 = document.body.createTextNode('aaa');
+      // console.log(textNode1);
+      // alert(textNode1);
+
+      // const a = document.getElementById('link');
+
+      const attrs = a.attributes; // 属性一覧を取得
+
+      // for-ofが使える
+      // for (const attr of attrs) {
+      //   console.log(attr);  // → id="link" → ...
+      // }
+      // console.log(attrs.href); // href="https://zenn.dev/ojk"
+      // console.log(attrs['href']); // href="https://zenn.dev/ojk"
+      // // value（属性値）のほうは書き換えも可能
+      // attrs.href.value = 'https://loremflickr.com/320/240/dog';
+
+
+      // const p = document.getElementsByClassName('p_class')[0];
+      // // console.log(p.style);
+      // p.style.border = 'solid 1px green';
+
+      // console.log(`border-style: ${p.style.borderStyle}`); // → solid
+      // console.log(`border-width: ${p.style.borderWidth}`); // → 1px
+      // console.log(`border-color: ${p.style.borderColor}`); // → green
+      // p.style.borderColor = 'firebrick';
+      // console.log(p.style.border); // → solid 1px firebrick
+
+      console.log(document.getElementById('link').className);
+
+      const classes = document.getElementById('link').classList;
+      classes.add("d", "e", "f");
+      // classes.add("d e f");
+      // classes.replace("d", "g");
+      // console.log(classes);
+      classes.toggle("d", window.innerWidth < 1000);
+      console.log(classes);
+
+
+    });
+  </script>
+</head>
+
+<body id="bid">
+  <p class="p_class" style="color: firebrick; border: solid 1px navy">
+    style属性の扱いにはちょっとした決まり事があります。
+  </p>
+  <p>
+    <a id="link" href="https://zenn.dev/ojk" class="" target="_blank" rel="noopener">
+      <img src="https://loremflickr.com/300/300" alt="画像">
+    </a>
+  </p>
+  <!--
+  <ul id="ulid">
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+  </ul>
+  <p id="p2" class="sp1c">pElemの兄</p>
+  <p id="p_elem" class="sp1c sp2c"><span id="sp1" class="sp1c sp2c">初期のテキスト</span><strong class="st1c">strong</strong>
+  </p>
+  <button class="box1">りんごに変更</button>
+  <button class="box2">バナナに変更</button>
+  <button class="box3">ミカンに変更</button>
+  <div id="contentBlock">
+    <button id="clickButton">Click Here</button>
+  </div>
+  <div id="id1" class="c1"><span id="id2"></span></div>
+
+  <div id="parentElement">
+    <span id="childElement">foo bar</span>
+  </div> -->
+</body>
+
+</html>
