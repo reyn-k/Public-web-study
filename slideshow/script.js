@@ -10,3 +10,6 @@ const list = [
   'images/09.jpg',
   'images/10.jpg',
 ];
+
+const [arrowL, arrowR] = document.getElementsByTagName('span');
+console.log(arrowL);
