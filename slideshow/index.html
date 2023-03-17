@@ -22,7 +22,17 @@
     <div id="photo"><img id="main" src="" alt=""></div>
     <span class="slideshow__arrow--right"></span>
   </div>
-  <script></script>
+  <script>
+
+    console.log('arrow');
+    // どうやったら実行されるか…
+    document.addEventListener('load', () => {
+      console.log('arrowL');
+      const [arrowL, arrowR] = document.getElementsByTagName('span');
+      console.log('arrowL' + arrowL);
+
+    })
+  </script>
 </body>
 
 </html>

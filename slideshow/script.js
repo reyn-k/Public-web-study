@@ -11,5 +11,4 @@ const list = [
   'images/10.jpg',
 ];
 
-const [arrowL, arrowR] = document.getElementsByTagName('span');
-console.log(arrowL);
+
