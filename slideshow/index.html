@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
 
-  <title>Study</title>
+  <title>JavaScript Study</title>
 
   <script>
   </script>
@@ -24,12 +24,14 @@
   </div>
   <script>
 
-    console.log('arrow');
-    // どうやったら実行されるか…
-    document.addEventListener('load', () => {
-      console.log('arrowL');
+    // loadはwindow! documentではない
+    // document.addEventListener('load', () => { // 中は実行されない
+    window.addEventListener('load', () => {
+      const img = document.getElementById('main')
       const [arrowL, arrowR] = document.getElementsByTagName('span');
-      console.log('arrowL' + arrowL);
+      console.log(img);
+      console.log(arrowL);
+      console.log(arrowR);
 
     })
   </script>
