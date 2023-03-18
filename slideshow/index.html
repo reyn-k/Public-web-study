@@ -11,7 +11,10 @@
   </script>
 
   <link rel="stylesheet" href="./style.css">
-  <link rel="JavaScript" href="./script.js">
+  <!-- <link rel="JavaScript" href="./script.js"> こんな書き方ない?もちろん実行されなかった-->
+  <!-- <link rel="preload" href="/_nuxt/f933cd7.js" as="script"> icsさんにはこんな書き方もある。用途によってはlinkも使うのか -->
+  <!-- <script type="text/javascript" charset="utf-8" src="./script.js"></script> typeはhtml5なら不要(デフォルトでjs) -->
+  <script charset="utf-8" src="./script.js"></script>
 
   <meta name="description" content="ページの説明文">
 </head>
@@ -23,18 +26,6 @@
     <span class="slideshow__arrow--right"></span>
   </div>
   <script>
-
-    // プルリクする
-    // loadはwindow! documentではない
-    // document.addEventListener('load', () => { // 中は実行されない
-    window.addEventListener('load', () => {
-      const img = document.getElementById('main')
-      const [arrowL, arrowR] = document.getElementsByTagName('span');
-      console.log(img);
-      console.log(arrowL);
-      console.log(arrowR);
-
-    })
   </script>
 </body>
 
