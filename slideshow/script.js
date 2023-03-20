@@ -13,6 +13,8 @@
 
 
 
+let imgIndex;
+imgIndex = 0;
 
     // プルリクする
     // loadはwindow! documentではない
@@ -32,6 +34,12 @@
     ];
       const img = document.getElementById('main')
       const [arrowL, arrowR] = document.getElementsByTagName('span');
-      console.log(list)
-      // img.src = list[1];
+      // console.log(list)
+      img.src = list[imgIndex];
+      arrowL.addEventListener('click', function(img, imgIndex){
+        console.log(imgIndex)
+        img.src = list[imgIndex++];
+
+      })
+
     })
