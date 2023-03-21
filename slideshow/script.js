@@ -12,13 +12,28 @@
 // ];
 
 
+// addEventListenerの外でlet n
+// clickはアロー関数、引数渡さない
+// アロー関数の中でconsole.log(n) -> nの値を出力した。OK
+
+// addEventListenerの中でlet n
+// clickはアロー関数、引数渡さない
+// アロー関数の中でconsole.log(n) -> nの値を出力した。OK
+
+// addEventListenerの中でlet n
+// clickはアロー関数、引数はn
+// アロー関数の中でconsole.log(n) -> 出力した
+// [PointerEvent]というオブジェクト？が返された
+
+//続きは明日
 
 let imgIndex;
 imgIndex = 0;
 
     // プルリクする
-    // loadはwindow! documentではない
+    // loadはwinddocumentではない
     // document.addEventListener('load', () => { // 中は実行されない
+      console.log('a')
     window.addEventListener('DOMContentLoaded', () => {
       const list = [
       'images/01.jpg',
