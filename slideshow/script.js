@@ -15,6 +15,7 @@
 // addEventListenerの外でlet n
 // clickはアロー関数、引数渡さない
 // アロー関数の中でconsole.log(n) -> nの値を出力した。OK
+// functionの中でconsole.log(n) -> nの値を出力した。OK
 
 // addEventListenerの中でlet n
 // clickはアロー関数、引数渡さない
@@ -23,16 +24,24 @@
 // addEventListenerの中でlet n
 // clickはアロー関数、引数はn
 // アロー関数の中でconsole.log(n) -> 出力した
+// functionの中でconsole.log(n) -> 出力した
 // [PointerEvent]というオブジェクト？が返された
+// ちなみに外も同じ
+
+// 外の変数はグローバルで、
+// アローもfunctionも、無名関数にしていてもそれは引数で渡さなくても読み込めるのでは！
+// 無名関数の引数とは？
 
 //続きは明日
 
 
     // プルリクする
-    // loadはwinddocumentではない
+    // loadはwindow.documentではない
     // document.addEventListener('load', () => { // 中は実行されない
-      console.log('a')
+      console.log('e')
     window.addEventListener('DOMContentLoaded', () => {
+      let imgIndex;
+      imgIndex = 0;
       const list = [
       'images/01.jpg',
       'images/02.jpg',
@@ -49,7 +58,7 @@
       const [arrowL, arrowR] = document.getElementsByTagName('span');
       // console.log(list)
       img.src = list[imgIndex];
-      arrowL.addEventListener('click', function(img, imgIndex){
+      arrowL.addEventListener('click', function(imgIndex) {
         console.log(imgIndex)
         img.src = list[imgIndex++];
 
