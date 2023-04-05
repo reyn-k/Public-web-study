@@ -40,7 +40,7 @@ imgIndex = 0;
     // プルリクする
     // loadはwindow.documentではない
     // document.addEventListener('load', () => { // 中は実行されない
-      console.log('i')
+      console.log('j')
     window.addEventListener('DOMContentLoaded', () => {
       // let imgIndex;
       // imgIndex = 0;
