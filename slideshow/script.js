@@ -40,7 +40,7 @@ imgIndex = 0;
     // プルリクする
     // loadはwindow.documentではない
     // document.addEventListener('load', () => { // 中は実行されない
-      console.log('h')
+      console.log('j')
     window.addEventListener('DOMContentLoaded', () => {
       // let imgIndex;
       // imgIndex = 0;
@@ -60,8 +60,7 @@ imgIndex = 0;
       const [arrowL, arrowR] = document.getElementsByTagName('span');
       // console.log(list)
       img.src = list[imgIndex];
-      arrowL.addEventListener('click', function(imgIndex) {
-        imgIndex = 100;
+      arrowL.addEventListener('click', () => {
         console.log(imgIndex)
         img.src = list[imgIndex++];
 
