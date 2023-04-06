@@ -60,9 +60,16 @@ imgIndex = 0;
       const [arrowL, arrowR] = document.getElementsByTagName('span');
       // console.log(list)
       img.src = list[imgIndex];
+      arrowR.addEventListener('click', () => {
+        console.log(imgIndex)
+        imgIndex++
+        img.src = list[imgIndex];
+
+      })
       arrowL.addEventListener('click', () => {
         console.log(imgIndex)
-        img.src = list[imgIndex++];
+        imgIndex--
+        img.src = list[imgIndex];
 
       })
 
