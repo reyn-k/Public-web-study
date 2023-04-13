@@ -58,7 +58,10 @@ imgIndex = 0;
     ];
       const img = document.getElementById('main')
       const [arrowL, arrowR] = document.getElementsByTagName('span')
-      const photoNum = document.getElementById('photo_num')
+      const photoContainer = document.getElementById('photo')
+      const photoNum = document.createElement('p')
+      photoNum.id = 'photo_num_after'
+      photoContainer.after(photoNum)
       // console.log(list)
       img.src = list[imgIndex];
       console.log(list.length)
