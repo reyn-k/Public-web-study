@@ -40,7 +40,7 @@ imgIndex = 0;
     // プルリクする
     // loadはwindow.documentではない
     // document.addEventListener('load', () => { // 中は実行されない
-      console.log('j??')
+      console.log('j')
     window.addEventListener('DOMContentLoaded', () => {
       // let imgIndex;
       // imgIndex = 0;
@@ -57,10 +57,18 @@ imgIndex = 0;
       'images/10.jpg',
     ];
       const img = document.getElementById('main')
-      const [arrowL, arrowR] = document.getElementsByTagName('span');
+      const [arrowL, arrowR] = document.getElementsByTagName('span')
+      const photoContainer = document.getElementById('photo')
+      const photoNum = document.createElement('p')
+      photoNum.id = 'photo_num_after'
+      photoContainer.after(photoNum)
       // console.log(list)
       img.src = list[imgIndex];
       console.log(list.length)
+      let photoNumView = () =>{
+        photoNum.textContent = (imgIndex+1) + "/" + list.length;
+      }
+      photoNumView();
       arrowR.addEventListener('click', () => {
         // console.log(imgIndex)
         if(imgIndex>=list.length-1){
@@ -71,6 +79,7 @@ imgIndex = 0;
         imgIndex++
         img.src = list[imgIndex];
       }
+      photoNumView();
 
       })
       arrowL.addEventListener('click', () => {
@@ -81,6 +90,7 @@ imgIndex = 0;
         img.src = list[imgIndex];
 
         }
+        photoNumView();
 
       })
 

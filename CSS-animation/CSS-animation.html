@@ -10,7 +10,8 @@
 	<script></script>
 	<style>
 		.box1,
-		.box2 {
+		.box2,
+		.box3 div {
 			width: 100px;
 			height: 100px;
 			margin: 100px auto;
@@ -19,9 +20,9 @@
 
 		.box1 {
 			/*animation: rotate-diagonal-1 2s;*/
-			animation: flip-horizontal-bck 2s both;
-			/* transform: perspective(500px)
-																																							transform-style: preserve-3d; */
+			animation: flip-horizontal-fwd 2s both;
+			/* perspective: 100px; */
+			/* 																																				transform-style: preserve-3d; */
 			/* transform: translate3d(0, 0, 0); */
 			/* transform: perspective(900px) translateZ(10px); */
 
@@ -33,13 +34,24 @@
 			transform: perspective(100px) translateZ(10px);
 		}
 
-		@keyframes flip-horizontal-bck {
+		.box3 {
+			/* perspective: 100px; */
+
+		}
+
+		.box3 div {
+			animation: flip-horizontal-fwd 2s both;
+		}
+
+		@keyframes flip-horizontal-fwd {
 			0% {
-				transform: perspective(990px) translateZ(990px) rotateY(0);
+				/* transform: translateZ(0px) rotateY(0); */
+				transform: translateZ(0px);
 			}
 
 			100% {
-				transform: perspective(990px) translateZ(0px) rotateY(-180deg);
+				/* transform: translateZ(-100px) rotateY(-180deg); */
+				transform: translateZ(-100px);
 			}
 		}
 	</style>
@@ -49,6 +61,9 @@
 	https://animista.net/play/basic/flip/flip-vertical-bck
 	<div class="box1">box1</div>
 	<div class="box2">box2</div>
+	<div class="box3">
+		<div>box3</div>
+	</div>
 </body>
 
 </html>
