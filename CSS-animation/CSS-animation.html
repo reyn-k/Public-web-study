@@ -20,7 +20,7 @@
 
 		.box1 {
 			/*animation: rotate-diagonal-1 2s;*/
-			animation: flip-horizontal-fwd 2s both;
+			/* animation: flip-horizontal-fwd 2s both; */
 			/* perspective: 100px; */
 			/* 																																				transform-style: preserve-3d; */
 			/* transform: translate3d(0, 0, 0); */
@@ -46,12 +46,12 @@
 		@keyframes flip-horizontal-fwd {
 			0% {
 				/* transform: translateZ(0px) rotateY(0); */
-				transform: perspective(100px) translateZ(0px);
+				transform: translateZ(0px);
 			}
 
 			100% {
 				/* transform: translateZ(-100px) rotateY(-180deg); */
-				transform: perspective(100px) translateZ(-100px);
+				transform: translateZ(-200px);
 			}
 		}
 	</style>
