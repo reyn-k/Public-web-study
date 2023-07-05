@@ -40,18 +40,19 @@
 		}
 
 		.box3 div {
-			animation: flip-horizontal-fwd 2s both;
+			animation: flip-diagonal-1-tr 2s both;
+			transform-origin: (top left, bottom right);
 		}
 
-		@keyframes flip-horizontal-fwd {
+		@keyframes flip-diagonal-1-tr {
 			0% {
 				/* transform: translateZ(0px) rotateY(0); */
-				transform: translateZ(0px);
+				transform: rotate3D(0, 0, 20, 0deg);
 			}
 
 			100% {
 				/* transform: translateZ(-100px) rotateY(-180deg); */
-				transform: translateZ(-200px);
+				transform: rotate3D(0, 20, 0, 180deg);
 			}
 		}
 	</style>
