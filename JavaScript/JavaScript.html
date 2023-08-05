@@ -16,11 +16,13 @@
   <script>
     window.addEventListener('DOMContentLoaded', function () {
       const a = document.getElementById('link');
+      const np = document.querySelectorAll('p')
+      console.log(np);
 
-      console.log(a.target); // → _blank
+      // console.log(a.target); // → _blank
       //const.node =
-      console.log(a.childNodes[0].data);
-      console.log(a.childNodes[0].target);
+      // console.log(a.childNodes[0].data);
+      // console.log(a.childNodes[0].target);
 
       a.removeAttribute('target');
 
@@ -54,7 +56,7 @@
       // p.style.borderColor = 'firebrick';
       // console.log(p.style.border); // → solid 1px firebrick
 
-      console.log(document.getElementById('link').className);
+      // console.log(document.getElementById('link').className);
 
       const classes = document.getElementById('link').classList;
       classes.add("d", "e", "f");
@@ -62,7 +64,7 @@
       // classes.replace("d", "g");
       // console.log(classes);
       classes.toggle("d", window.innerWidth < 1000);
-      console.log(classes);
+      // console.log(classes);
 
 
     });

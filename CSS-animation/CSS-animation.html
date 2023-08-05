@@ -19,7 +19,7 @@
 		}
 
 		.box1 {
-			/*animation: rotate-diagonal-1 2s;*/
+			animation: flip-2-hor-top-1 4s both;
 			/* animation: flip-horizontal-fwd 2s both; */
 			/* perspective: 100px; */
 			/* 																																				transform-style: preserve-3d; */
@@ -29,30 +29,59 @@
 		}
 
 		.box2 {
+			animation: flip-2-hor-top-2 4s both;
 			/*animation: rotate-vert-center2 10s;*/
 			/* animation: flip-horizontal-bck2 2s; */
-			transform: perspective(100px) translateZ(10px);
+			/* transform: perspective(100px) translateZ(10px); */
 		}
 
 		.box3 {
-			perspective: 100px;
+			/* perspective: 100px; */
 
 		}
 
 		.box3 div {
 			animation: flip-diagonal-1-tr 2s both;
-			transform-origin: (top left, bottom right);
+			/* transform-origin: (top left, bottom right); */
+		}
+
+		@keyframes flip-2-hor-top-1 {
+			0% {
+				/* transform: translateZ(0px) rotateY(0); */
+				transform: translateY(0) rotateX(0deg);
+				/* transform-origin: 50% 50%; */
+			}
+
+			100% {
+				/* transform: translateZ(-100px) rotateY(-180deg); */
+				transform: translateY(-100%) rotateX(180deg);
+				/* transform-origin: 0% 50%; */
+			}
+		}
+
+		@keyframes flip-2-hor-top-2 {
+			0% {
+				/* transform: translateZ(0px) rotateY(0); */
+				transform: translateY(0) rotateX(0deg);
+				/* transform-origin: 50% 50%; */
+			}
+
+			100% {
+				/* transform: translateZ(-100px) rotateY(-180deg); */
+				transform: translateY(-100%) rotateX(-180deg);
+				/* transform-origin: 0% 50%; */
+			}
 		}
 
 		@keyframes flip-diagonal-1-tr {
 			0% {
 				/* transform: translateZ(0px) rotateY(0); */
-				transform: rotate3D(0, 0, 20, 0deg);
+				transform: rotate3D(1, 1, 0, 0deg);
 			}
 
 			100% {
 				/* transform: translateZ(-100px) rotateY(-180deg); */
-				transform: rotate3D(0, 20, 0, 180deg);
+				transform: rotate3D(1, 1, 0, 180deg);
 			}
 		}
 	</style>
